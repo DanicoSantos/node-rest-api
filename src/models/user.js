@@ -5,12 +5,14 @@ const UserSchema = new mongoose.Schema({
     name : {
         type: String,
         required: true,
+        select: true,
     },
     email: {
         type: String,
         unique: true,
         required: true,
         lowercase: true,
+        select: true,
     },
     password: {
         type: String, 
@@ -20,6 +22,7 @@ const UserSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now,
+        select: true,
     }
 });
 
